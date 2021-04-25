@@ -473,6 +473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 5844160173640748956, guid: 8f0d7d78fe3d2dd46b5857c50cc8f314,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.58
+      objectReference: {fileID: 0}
     - target: {fileID: 6508606290456425725, guid: 8f0d7d78fe3d2dd46b5857c50cc8f314,
         type: 3}
       propertyPath: m_Mesh
@@ -561,6 +566,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5548575591145608429, guid: b5e93a1419929414aac15620b7c59010,
+        type: 3}
+      propertyPath: orthographic size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548575591145608429, guid: b5e93a1419929414aac15620b7c59010,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548575591145608429, guid: b5e93a1419929414aac15620b7c59010,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5548575591145608431, guid: b5e93a1419929414aac15620b7c59010,
         type: 3}
       propertyPath: m_Name
@@ -719,6 +739,12 @@ PrefabInstance:
       propertyPath: DELETE_THRESHHOLD
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
+        type: 3}
+      propertyPath: defaultRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 3076541414224420690, guid: c0e11ec2dfdc30144bc898c29a1dacd8,
+        type: 3}
     - target: {fileID: 6063401579046459238, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
       propertyPath: m_LocalPosition.x

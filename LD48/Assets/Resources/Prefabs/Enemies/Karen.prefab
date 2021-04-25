@@ -364,10 +364,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d896a38567af07488f91651d1ecb995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingDirection: 0
+  rb: {fileID: 0}
   speed: 100
   JUMP_FORCE: 10
   COUNTER_JUMP_FORCE: 30
+  movingDirection: 0
+  spacebarHeld: 0
+  timeSinceGrounded: 0
+  timeSinceJumpKeyPressed: 0
+  isTalking: 0
+  stunTimer: 0
+  anim: {fileID: 0}
+  prevVelocity: {x: 0, y: 0}
+  prevGravity: 0
+  fadeDead: {fileID: 0}
 --- !u!95 &8693279490709939919
 Animator:
   serializedVersion: 3
@@ -378,7 +388,7 @@ Animator:
   m_GameObject: {fileID: 813346517259266653}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56e8190f661bf964b91a82e30e1820a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
