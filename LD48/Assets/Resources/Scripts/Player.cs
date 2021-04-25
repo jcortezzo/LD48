@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float COUNTER_JUMP_FORCE;  // readonly
     private bool facingRight;
 
+    [SerializeField] private Direction movingDirection = Direction.IDLE;
+
     private const float CAN_JUMP_THRESHHOLD = 0.05f;
     private const float JUMP_PRESS_BUFFER = 0.1f;
     private const float COYOTE_BUFFER = 0.1f;
@@ -18,7 +20,10 @@ public class Player : MonoBehaviour
     private bool spacebarHeld;
     private float timeSinceGrounded;  // e.g. canJump
     private float timeSinceJumpKeyPressed; // tracks when spacebar is pressed used w/ buffering
+    private bool bounce;
+    
     public bool isTalking;  // While a player is talking they can't walk or jump
+
 
     public float stunTimer = 0f;
 
@@ -41,6 +46,7 @@ public class Player : MonoBehaviour
         rb.freezeRotation = true;
         prevVelocity = Vector2.zero;
         prevGravity = rb.gravityScale;
+        bounce = true;
     }
 
     // Update is called once per frame
@@ -90,15 +96,25 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        Vector2 newVeloc = Walk();
+        Vector2 newVeloc = AutoMove(movingDirection);
+
         rb.velocity = isTalking ? new Vector2(0, rb.velocity.y) : newVeloc;
         if (timeSinceJumpKeyPressed < JUMP_PRESS_BUFFER && timeSinceGrounded < COYOTE_BUFFER)
             Jump();
 
-        if (IsMovingUp() && !spacebarHeld) // If we're moving up and bar has been released counter force down 
+        // counter force
+        // space bar hold = no counter, release = fall quicker
+        // if bounce, then no counter
+        if (IsMovingUp() && (!spacebarHeld || !bounce)) 
             rb.AddForce(COUNTER_JUMP_FORCE * Vector2.down * rb.mass);
+
     }
 
+    public void SetDirection(Direction direction)
+    {
+        movingDirection = direction;
+    }
+    
     public void Die()
     {
 
@@ -109,9 +125,17 @@ public class Player : MonoBehaviour
         return stunTimer > 0;
     }
 
-    private Vector2 Walk()
+    public Vector2 AutoMove(Direction dir)
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        float horizontal = 0;
+        if (dir == Direction.IDLE) horizontal = 0;
+        else if (dir == Direction.LEFT) horizontal = -1;
+        else horizontal = 1;
+        return Walk(horizontal);
+    }
+
+    private Vector2 Walk(float horizontal)
+    {
         anim.SetFloat("HorizontalSpeed", Mathf.Abs(horizontal));
         if (horizontal != 0)
         {
@@ -122,6 +146,13 @@ public class Player : MonoBehaviour
         }
         return new Vector2(horizontal * speed * Time.deltaTime, rb.velocity.y);
     }
+
+    private Vector2 Walk()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        return Walk(horizontal);
+    }
+
 
     void Jump()
     {
@@ -159,30 +190,51 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // STUB
-        //if (collision.gameObject.GetComponent<Rune>() != null)
-        //{
-        //    foreach (ContactPoint2D point in collision.contacts)
-        //    {
-        //        if (point.normal.y >= CAN_JUMP_THRESHHOLD)
-        //        {
-        //            collision.gameObject.GetComponent<Rune>().Activate();
-        //            Jump();
-        //        }
-        //    }
-        //}
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
+        bool colliedFloor = collision.gameObject.CompareTag("Floor");
+        bool colliedEnemy = collision.gameObject.CompareTag("Enemy");
+        if (colliedFloor || colliedEnemy)
         {
+            if (colliedEnemy) bounce = false; 
             foreach (ContactPoint2D point in collision.contacts)
             {
                 if (point.normal.y >= CAN_JUMP_THRESHHOLD)
                 {
                     timeSinceGrounded = 0f;
+                    if (colliedEnemy)
+                    {
+                        return;
+                    }
                 }
+                
+            }
+        }
+
+        if (colliedEnemy && !DialogueManager.Instance.IsInDialogue)
+        {
+            DialogueManager.Instance.SetDialogueEntities(this, collision.gameObject.GetComponent<DialogueEntity>());
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        bool colliedFloor = collision.gameObject.CompareTag("Floor");
+        bool colliedEnemy = collision.gameObject.CompareTag("Enemy");
+        if (colliedFloor || colliedEnemy)
+        {
+            //if (colliedEnemy) bounce = false;
+            foreach (ContactPoint2D point in collision.contacts)
+            {
+                if (point.normal.y >= CAN_JUMP_THRESHHOLD)
+                {
+                    timeSinceGrounded = 0f;
+                    if (colliedEnemy)
+                    {
+                        bounce = true;
+                        Jump();
+                        //return;
+                    }
+                }
+
             }
         }
     }
@@ -194,4 +246,9 @@ public class Player : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.gravityScale = 0;
     }
+}
+
+public enum Direction
+{
+    LEFT, RIGHT, IDLE
 }
