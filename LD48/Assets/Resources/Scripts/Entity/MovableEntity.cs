@@ -132,7 +132,7 @@ public class MovableEntity : MonoBehaviour
 
     public void Jump()
     {
-        if (isTalking) return;
+        if (DialogueManager.Instance.IsInDialogue) return;  // isTalking previously
         anim.SetTrigger("Jump");
         timeSinceGrounded = float.PositiveInfinity;  // Prevents us from double-jumping
         rb.velocity = new Vector2(rb.velocity.x, 0);

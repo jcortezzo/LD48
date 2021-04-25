@@ -36,6 +36,7 @@ public class Player : MovableEntity
 
         anim.SetFloat("VerticalSpeed", rb.velocity.y);
         anim.SetBool("CanJump", (timeSinceJumpKeyPressed < JUMP_PRESS_BUFFER && timeSinceGrounded < COYOTE_BUFFER));
+        anim.SetBool("IsInDialogue", DialogueManager.Instance.IsInDialogue);
     }
 
     public override void FixedUpdate()
