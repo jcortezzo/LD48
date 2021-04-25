@@ -6,7 +6,8 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    [SerializeField] private Player player;
+    [SerializeField] private MovableEntity player;
+    [SerializeField] private MovableEntity enemy;
     [SerializeField] private DialogueEntity dialogueEntity1;
     [SerializeField] private DialogueEntity dialogueEntity2;
     [SerializeField] private Dialogue[] dialogues;
@@ -51,14 +52,15 @@ public class DialogueManager : MonoBehaviour
         dialogueEntity2.ClearText();
         if (firstPerson)
         {
-            dialogueEntity1.DisplaySentence(sentence);
+            dialogueEntity2.DisplaySentence(sentence);
         } else
         {
-            dialogueEntity2.DisplaySentence(sentence);
+            dialogueEntity1.DisplaySentence(sentence);
         }
         if(!ContainNextDialogue())
         {
-            dialogueEntity1.gameObject.GetComponent<Collider2D>().enabled = false;
+            dialogueEntity2.gameObject.GetComponent<Collider2D>().enabled = false;
+            dialogueEntity2.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             player.SetDirection(Direction.RIGHT);
             IsInDialogue = false;
         }
@@ -69,12 +71,14 @@ public class DialogueManager : MonoBehaviour
         return sentences.Count > 0;
     }
 
-    public void SetDialogueEntities(Player d1, DialogueEntity d2)
+    public void SetDialogueEntities(MovableEntity d1, MovableEntity d2)
     {
         player = d1;
-        dialogueEntity1 = d2;
-        dialogueEntity2 = d1.gameObject.GetComponent<DialogueEntity>();
+        enemy = d2;
+        dialogueEntity1 = d1.gameObject.GetComponent<DialogueEntity>();
+        dialogueEntity2 = d2.gameObject.GetComponent<DialogueEntity>();
         d1.SetDirection(Direction.IDLE);
+        d2.SetDirection(Direction.IDLE);
         StartDialogue();
     }
 

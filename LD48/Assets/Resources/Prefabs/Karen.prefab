@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 813346517259266625}
   - component: {fileID: 813346517259266624}
   - component: {fileID: 1569670512}
+  - component: {fileID: 136562809807839778}
+  - component: {fileID: 8693279490709939919}
   m_Layer: 0
   m_Name: Karen
   m_TagString: Enemy
@@ -299,19 +301,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813346517259266653}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &813346517259266624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -350,3 +352,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6eaf909248574a468f9ef865c25f90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &136562809807839778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813346517259266653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d896a38567af07488f91651d1ecb995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingDirection: 0
+  speed: 100
+  JUMP_FORCE: 10
+  COUNTER_JUMP_FORCE: 30
+--- !u!95 &8693279490709939919
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813346517259266653}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
