@@ -7,6 +7,7 @@ public class GlobalManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private Direction direction = Direction.RIGHT;
 
+
     void Start()
     {
         player.SetDirection(direction);    

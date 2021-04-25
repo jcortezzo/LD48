@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 258981248487552474}
   - component: {fileID: 4184591864741118111}
   m_Layer: 0
-  m_Name: Poopy
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1301569993794878491, guid: 91ec950fc47a56e49949e11a8bb09630,
+  m_Sprite: {fileID: 4518225611054890064, guid: 021dff6a188191c4aa6accb13df531c9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -327,7 +327,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029477, y: 0}
+  m_Offset: {x: 0.031563804, y: -0.03575611}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -338,7 +338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.56089187, y: 1}
+  m_Size: {x: 0.31008884, y: 0.81049347}
   m_EdgeRadius: 0
 --- !u!114 &4184591864741118050
 MonoBehaviour:
@@ -352,12 +352,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649e77a9c5e40494db3c11caf35abc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   speed: 200
   JUMP_FORCE: 11
   COUNTER_JUMP_FORCE: 30
   movingDirection: 2
+  spacebarHeld: 0
+  timeSinceGrounded: 0
+  timeSinceJumpKeyPressed: 0
   isTalking: 0
   stunTimer: 0
+  anim: {fileID: 0}
+  prevVelocity: {x: 0, y: 0}
+  prevGravity: 0
   fadeDead: {fileID: 0}
 --- !u!114 &258981248487552474
 MonoBehaviour:
