@@ -8,6 +8,27 @@ TextureImporter:
   - first:
       213: -1036284008060332236
     second: AnnoyingGuy-Sheet_1
+  - first:
+      213: 7559729845249558135
+    second: AnnoyingGuy-Sheet_0
+  - first:
+      213: 953666796885225295
+    second: AnnoyingGuy-Sheet_1
+  - first:
+      213: -5201155531202331341
+    second: AnnoyingGuy-Sheet_2
+  - first:
+      213: 4178116232464561022
+    second: AnnoyingGuy-Sheet_3
+  - first:
+      213: -4030896795155273383
+    second: AnnoyingGuy-Sheet_4
+  - first:
+      213: 1071993680037475966
+    second: AnnoyingGuy-Sheet_5
+  - first:
+      213: -8173883012026466836
+    second: AnnoyingGuy-Sheet_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -119,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92409a313ca49f8e0800000000000000
-      internalID: -1659212786000395223
+      spriteID: 776c408bd3e89e860800000000000000
+      internalID: 7559729845249558135
       vertices: []
       indices: 
       edges: []
@@ -140,8 +161,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43755256f216e91f0800000000000000
-      internalID: -1036284008060332236
+      spriteID: f4fad6626ea1c3d00800000000000000
+      internalID: 953666796885225295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingGuy-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d702de998c1d7b0800000000000000
+      internalID: -5201155531202331341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingGuy-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73f75aa396abf930800000000000000
+      internalID: 4178116232464561022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingGuy-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959628ea8b06f08c0800000000000000
+      internalID: -4030896795155273383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingGuy-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76f814829c70ee00800000000000000
+      internalID: 1071993680037475966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingGuy-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedff8825b8809e80800000000000000
+      internalID: -8173883012026466836
       vertices: []
       indices: 
       edges: []

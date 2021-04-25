@@ -8,6 +8,30 @@ TextureImporter:
   - first:
       213: 3757887758730843458
     second: AnnoyingKaren-Sheet_1
+  - first:
+      213: 4410731211436954693
+    second: AnnoyingKaren-Sheet_0
+  - first:
+      213: -2765492418390339063
+    second: AnnoyingKaren-Sheet_1
+  - first:
+      213: -93100244190771195
+    second: AnnoyingKaren-Sheet_2
+  - first:
+      213: -6220435316226704003
+    second: AnnoyingKaren-Sheet_3
+  - first:
+      213: -2434618419897868599
+    second: AnnoyingKaren-Sheet_4
+  - first:
+      213: -4463986406253776448
+    second: AnnoyingKaren-Sheet_5
+  - first:
+      213: -1296170584967864470
+    second: AnnoyingKaren-Sheet_6
+  - first:
+      213: 8016463186416997365
+    second: AnnoyingKaren-Sheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -119,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e3a48b6d5b75d450800000000000000
-      internalID: 6112927710391346149
+      spriteID: 5449d61faa0163d30800000000000000
+      internalID: 4410731211436954693
       vertices: []
       indices: 
       edges: []
@@ -140,8 +164,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 245d0f4a103b62430800000000000000
-      internalID: 3757887758730843458
+      spriteID: 902dec43c4ffe99d0800000000000000
+      internalID: -2765492418390339063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingKaren-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508c18832dd35bef0800000000000000
+      internalID: -93100244190771195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingKaren-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d330489039ca9a0800000000000000
+      internalID: -6220435316226704003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingKaren-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce5d5e327f763ed0800000000000000
+      internalID: -2434618419897868599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingKaren-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c13215c30cbc02c0800000000000000
+      internalID: -4463986406253776448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingKaren-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f1eaa68b3130ee0800000000000000
+      internalID: -1296170584967864470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnnoyingKaren-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f391658bc2304f60800000000000000
+      internalID: 8016463186416997365
       vertices: []
       indices: 
       edges: []

@@ -81,7 +81,8 @@ public class MovableEntity : MonoBehaviour
         }
         Vector2 newVeloc = AutoMove(movingDirection);
 
-        rb.velocity = isTalking ? new Vector2(0, rb.velocity.y) : newVeloc;
+        rb.velocity = newVeloc;
+        //rb.velocity = isTalking ? new Vector2(0, rb.velocity.y) : newVeloc;
 
     }
 
