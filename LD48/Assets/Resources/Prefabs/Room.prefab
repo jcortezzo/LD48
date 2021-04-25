@@ -100,6 +100,7 @@ MonoBehaviour:
   boundingBox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  isInitialRoom: 0
 --- !u!1001 &2332206882751109542
 PrefabInstance:
   m_ObjectHideFlags: 0

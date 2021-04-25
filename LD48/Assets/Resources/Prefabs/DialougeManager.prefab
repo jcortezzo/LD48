@@ -44,4 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  dialogueEntity: {fileID: 0}
+  enemy: {fileID: 0}
+  dialogueEntity1: {fileID: 0}
+  dialogueEntity2: {fileID: 0}
+  dialogues:
+  - text:
+    - Hi!! How is your day?
+    - GETTTT OUTTTT
+    - oh, i'm sorry :(

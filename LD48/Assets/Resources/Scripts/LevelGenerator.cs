@@ -65,14 +65,14 @@ public class LevelGenerator : MonoBehaviour
             //       even after detaching in OnDestroy(), the Room
             //       still tries to delete all of its children at
             //       the time that Destroy() was called.
-            foreach (Transform child in prevRoom.transform)
-            {
-                if (child.gameObject.CompareTag("Enemy") ||
-                    child.gameObject.CompareTag("Holy"))
-                {
-                    child.SetParent(null);
-                }
-            }
+            //foreach (Transform child in prevRoom.transform)
+            //{
+            //    if (child.gameObject.CompareTag("Enemy") ||
+            //        child.gameObject.CompareTag("Holy"))
+            //    {
+            //        child.SetParent(null);
+            //    }
+            //}
             Destroy(prevRoom.gameObject);
         }
     }
