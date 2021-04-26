@@ -66,8 +66,8 @@ public class LevelGenerator : MonoBehaviour
     private void DeletePrevRoom()
     {
         //if (!GlobalManager.instance.HasPlayer()) return;
-        if (prevRoom == null) return;
-        
+        if (prevRoom == null || prevRoom.dontDelete) return;
+
         if ((GlobalManager.Instance.gameDirection == Direction.RIGHT && 
             player.transform.position.x >= currentRoom.boundingBox.center.x + DELETE_THRESHHOLD) ||
 

@@ -6,6 +6,7 @@ public class Room : MonoBehaviour
 {
     public Bounds boundingBox;
     [SerializeField] public bool isInitialRoom;
+    [SerializeField] public bool dontDelete = false;
 
     // Start is called before the first frame update
     void Start()

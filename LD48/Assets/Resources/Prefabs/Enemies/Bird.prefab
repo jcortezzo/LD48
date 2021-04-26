@@ -29,14 +29,14 @@ RectTransform:
   m_GameObject: {fileID: 492474655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.603744, y: 4.91066, z: 4.603744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 813346517259266627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.023019195, y: 3.133001}
+  m_AnchoredPosition: {x: 0.023019195, y: 0.46}
   m_SizeDelta: {x: 1.9051628, y: 0.6603352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &492474659
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.1882353, g: 0.14901961, b: 0.14901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -416,6 +416,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6689708, y: 0}
+  m_Offset: {x: 0.7654996, y: 0}
   serializedVersion: 2
-  m_Radius: 0.26792037
+  m_Radius: 0.33731472
