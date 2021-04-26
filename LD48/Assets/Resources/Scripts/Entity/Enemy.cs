@@ -42,12 +42,12 @@ public class Enemy : MovableEntity
         if(isSomethingInFront)
         {
             //Debug.Log("not moving: " + hit.collider.name + (this.transform.position));
-            Debug.Log("not moving: ");
+            //Debug.Log("not moving: ");
             SetDirection(Direction.IDLE);
         }
         else
         {
-            Debug.Log("moving left");
+            //Debug.Log("moving left");
             if(!isTalking) SetDirection(movingDirection);
             base.FixedUpdate();
         }
