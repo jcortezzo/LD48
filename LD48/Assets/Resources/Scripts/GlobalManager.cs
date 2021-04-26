@@ -14,7 +14,7 @@ public class GlobalManager : MonoBehaviour
     public ProgressBar LevelProgress { get; set; }
     public PooProgress PooProgress { get; set; }
 
-    [SerializeField] public Player player { get; private set; }
+    [SerializeField] public Player player { get; set; }
     public Camera cam { get; private set; }
 
     private void Awake()
@@ -46,7 +46,7 @@ public class GlobalManager : MonoBehaviour
         {
             if (PooProgress.PooPercentage() > 1.3f)
             {
-                player.ShitPants();
+                if(player != null) player.ShitPants();
                 //LoadLosingScene();
             }
         }

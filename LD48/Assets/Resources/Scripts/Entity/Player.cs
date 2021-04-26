@@ -10,6 +10,7 @@ public class Player : MovableEntity
     {
         base.Start();
         facingRight = true;
+        GlobalManager.Instance.player = this;
     }
 
     // Update is called once per frame
