@@ -77,12 +77,26 @@ public class Player : MovableEntity
                     }
                 }
                 
+                
+                //if(point.normal.x >= CAN_TALK_THRESHOLD)
+                //{
+                //    if (colliedEnemy)
+                //    {
+                //        return;
+                //    }
+                //}
             }
         }
-
+        float enemyHeight = collision.gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        if (colliedEnemy && this.transform.position.y > collision.transform.position.y + enemyHeight / 2)
+        {
+            return;
+        }
         if (colliedEnemy && !DialogueManager.Instance.IsInDialogue)
         {
             DialogueManager.Instance.SetDialogueEntities(this, collision.gameObject.GetComponent<MovableEntity>());
+            this.isTalking = true;
+            collision.gameObject.GetComponent<MovableEntity>().isTalking = true;
         }
     }
 
@@ -108,13 +122,5 @@ public class Player : MovableEntity
 
             }
         }
-    }
-
-    public void Stun(float n)
-    {
-        stunTimer = n;
-        prevVelocity = rb.velocity;
-        rb.velocity = Vector2.zero;
-        rb.gravityScale = 0;
     }
 }

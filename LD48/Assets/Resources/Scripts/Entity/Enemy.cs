@@ -46,7 +46,7 @@ public class Enemy : MovableEntity
         else
         {
             Debug.Log("moving left");
-            SetDirection(Direction.LEFT);
+            if(!isTalking) SetDirection(Direction.LEFT);
             base.FixedUpdate();
         }
 

@@ -349,6 +349,7 @@ MonoBehaviour:
   timeSinceGrounded: 0
   timeSinceJumpKeyPressed: 0
   isTalking: 0
+  entityType: 1
   stunTimer: 0
   anim: {fileID: 0}
   prevVelocity: {x: 0, y: 0}
@@ -415,6 +416,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47999144, y: 0}
+  m_Offset: {x: -0.3610465, y: 0}
   serializedVersion: 2
-  m_Radius: 0.31419694
+  m_Radius: 0.27921313

@@ -15,6 +15,7 @@ public class MovableEntity : MonoBehaviour
     [SerializeField] private Direction movingDirection = Direction.IDLE;
 
     public const float CAN_JUMP_THRESHHOLD = 0.05f;
+    public const float CAN_TALK_THRESHOLD = 0.05f;
     public const float JUMP_PRESS_BUFFER = 0.1f;
     public const float COYOTE_BUFFER = 0.1f;
 
@@ -23,7 +24,7 @@ public class MovableEntity : MonoBehaviour
     public float timeSinceJumpKeyPressed; // tracks when spacebar is pressed used w/ buffering
 
     public bool isTalking;  // While a player is talking they can't walk or jump
-
+    public EntityType entityType;
 
     public float stunTimer = 0f;
 
@@ -69,7 +70,7 @@ public class MovableEntity : MonoBehaviour
         //        return;
         //    }
         //}
-
+        if (isTalking) SetDirection(Direction.IDLE);
         if (transform.localScale.x < 0)
         {
             Debug.Log("scale fliped");
@@ -203,4 +204,9 @@ public class MovableEntity : MonoBehaviour
 public enum Direction
 {
     LEFT, RIGHT, IDLE
+}
+
+public enum EntityType 
+{ 
+    PLAYER, KAREN_FEMALE, KAREN_MALE, BIRD, DOG
 }

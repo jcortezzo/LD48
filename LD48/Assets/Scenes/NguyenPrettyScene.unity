@@ -844,6 +844,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8483688294354239972, guid: 18a8c2fb9ee8edc42ac6d84f1bed4cc8,
+        type: 3}
+      propertyPath: birdDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483688294354239972, guid: 18a8c2fb9ee8edc42ac6d84f1bed4cc8,
+        type: 3}
+      propertyPath: birdDialogues.Array.data[0].text.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483688294354239972, guid: 18a8c2fb9ee8edc42ac6d84f1bed4cc8,
+        type: 3}
+      propertyPath: birdDialogues.Array.data[0].text.Array.data[0]
+      value: QUACK
+      objectReference: {fileID: 0}
     - target: {fileID: 8483688294354239973, guid: 18a8c2fb9ee8edc42ac6d84f1bed4cc8,
         type: 3}
       propertyPath: m_Name

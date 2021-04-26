@@ -8,9 +8,12 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private MovableEntity player;
     [SerializeField] private MovableEntity enemy;
+
     [SerializeField] private DialogueEntity dialogueEntity1;
     [SerializeField] private DialogueEntity dialogueEntity2;
+
     [SerializeField] private Dialogue[] dialogues;
+    [SerializeField] private Dialogue[] birdDialogues;
     public bool IsInDialogue { get; private set; }
 
     private Queue<string> sentences;
@@ -20,7 +23,6 @@ public class DialogueManager : MonoBehaviour
     {
         Instance = this;
         sentences = new Queue<string>();
-        firstPerson = true;
     }
 
     // Update is called once per frame
@@ -34,7 +36,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
-        Dialogue dialogue = dialogues[Random.Range(0, dialogues.Length)];
+        Dialogue dialogue = (enemy.entityType != EntityType.BIRD) ? dialogues[Random.Range(0, dialogues.Length)] : 
+                                                                    birdDialogues[Random.Range(0, birdDialogues.Length)];
+        firstPerson = dialogue.p1First;
         sentences.Clear();
         foreach(string s in dialogue.text)
         {
@@ -53,10 +57,10 @@ public class DialogueManager : MonoBehaviour
         dialogueEntity2.ClearText();
         if (firstPerson)
         {
-            dialogueEntity2.DisplaySentence(sentence);
+            dialogueEntity1.DisplaySentence(sentence);
         } else
         {
-            dialogueEntity1.DisplaySentence(sentence);
+            dialogueEntity2.DisplaySentence(sentence);
         }
         firstPerson = !firstPerson;
         if(!ContainNextDialogue())
@@ -66,6 +70,8 @@ public class DialogueManager : MonoBehaviour
             dialogueEntity1.DisplaySentence("");
             player.SetDirection(Direction.RIGHT);
             IsInDialogue = false;
+            player.isTalking = false;
+            enemy.isTalking = false;
         }
     }
 
@@ -82,7 +88,6 @@ public class DialogueManager : MonoBehaviour
         dialogueEntity2 = d2.gameObject.GetComponent<DialogueEntity>();
         d1.SetDirection(Direction.IDLE);
         d2.SetDirection(Direction.IDLE);
-        firstPerson = true;
         StartDialogue();
     }
 
@@ -92,4 +97,5 @@ public class DialogueManager : MonoBehaviour
 public class Dialogue
 {
     public string[] text;
+    public bool p1First;
 }
