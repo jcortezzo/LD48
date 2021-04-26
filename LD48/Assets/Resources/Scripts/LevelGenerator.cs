@@ -6,6 +6,7 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private Room currentRoom;  // unserialize this when ready
     [SerializeField] private Room prevRoom;
+    [SerializeField] private IList<Room> prevRooms;
     [SerializeField] private float GEN_THRESHHOLD;
     [SerializeField] private float DELETE_THRESHHOLD;
 
@@ -20,6 +21,7 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
+        prevRooms = new List<Room>();
         beginGenerate = true;
     }
 
@@ -54,7 +56,14 @@ public class LevelGenerator : MonoBehaviour
                                 new Vector2(currentRoom.boundingBox.max.x, currentRoom.transform.position.y),
                                 Quaternion.identity)
                                 .GetComponent<Room>();
+            Debug.Log("There are " + prevRooms.Count + " rooms to destroy");
+            foreach (Room prev in prevRooms)
+            {
+                if (prev == null || prev.dontDelete) continue;
+                Destroy(prev.gameObject);
+            }
             prevRoom = currentRoom;
+            prevRooms.Add(prevRoom);
             currentRoom = nextRoom;
         }
 
@@ -66,7 +75,14 @@ public class LevelGenerator : MonoBehaviour
                                 new Vector2(currentRoom.boundingBox.min.x - currentRoom.boundingBox.size.x, currentRoom.transform.position.y),
                                 Quaternion.identity)
                                 .GetComponent<Room>();
+            Debug.Log("There are " + prevRooms.Count + " rooms to destroy");
+            foreach (Room prev in prevRooms)
+            {
+                if (prev == null || prevRoom.dontDelete) continue;
+                Destroy(prev.gameObject);
+            }
             prevRoom = currentRoom;
+            prevRooms.Add(prevRoom);
             currentRoom = nextRoom;
         }
     }
@@ -102,7 +118,14 @@ public class LevelGenerator : MonoBehaviour
             //        child.SetParent(null);
             //    }
             //}
+
+            // if only 1
             Destroy(prevRoom.gameObject);
+            //Debug.Log("There are " + prevRooms.Count + " rooms to destroy");
+            //foreach (Room prev in prevRooms)
+            //{
+            //    Destroy(prev.gameObject);
+            //}
         }
     }
 }

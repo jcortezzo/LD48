@@ -73,7 +73,7 @@ public class MovableEntity : MonoBehaviour
         if (isTalking) SetDirection(Direction.IDLE);
         if (transform.localScale.x < 0)
         {
-            Debug.Log("scale fliped");
+            //Debug.Log("scale fliped");
             dialogueText.transform.localScale = new Vector3(-1, dialogueText.transform.localScale.y, dialogueText.transform.localScale.z);
         }
         else
@@ -130,7 +130,7 @@ public class MovableEntity : MonoBehaviour
         
         if (horizontal != 0)
         {
-            Debug.Log(horizontal);
+            //Debug.Log(horizontal);
             bool prev = facingRight;
             facingRight = horizontal > 0;
             int flip = prev == facingRight ? 1 : -1;
