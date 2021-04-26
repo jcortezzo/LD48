@@ -115,6 +115,7 @@ public class Player : MovableEntity
                     if (colliedEnemy)
                     {
                         Jump();
+                        PooProgress.Instance.PushPooDeeper();
                         collision.gameObject.GetComponent<DialogueEntity>().DisplaySentence("Oucchh");
                         //return;
                     }

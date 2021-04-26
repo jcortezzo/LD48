@@ -29,7 +29,7 @@ public class GlobalManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         player.SetDirection(direction);
-        
+
     }
 
     // Update is called once per frame
