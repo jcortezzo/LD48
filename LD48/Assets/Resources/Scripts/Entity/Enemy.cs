@@ -19,6 +19,8 @@ public class Enemy : MovableEntity
         Random r = new Random();
         if (randomGender) isGirl = Random.Range(0f, 1f) > 0.5f;
         facingRight = true;
+
+        movingDirection = GlobalManager.Instance.gameDirection == Direction.RIGHT ? Direction.LEFT : Direction.RIGHT;
     }
 
     // Update is called once per frame
@@ -46,7 +48,7 @@ public class Enemy : MovableEntity
         else
         {
             Debug.Log("moving left");
-            if(!isTalking) SetDirection(Direction.LEFT);
+            if(!isTalking) SetDirection(movingDirection);
             base.FixedUpdate();
         }
 
@@ -72,6 +74,22 @@ public class Enemy : MovableEntity
             }
         }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        bool colliedPlayer = collision.CompareTag("Player");
+        bool colliedEnemy = collision.CompareTag("Enemy");
+        if (colliedPlayer || colliedEnemy)
+        {
+            isSomethingInFront = true;
+            if (colliedPlayer && !DialogueManager.Instance.IsInDialogue)
+            {
+                DialogueManager.Instance.SetDialogueEntities(collision.gameObject.GetComponent<MovableEntity>(), this);
+            }
+        }
+    }
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {

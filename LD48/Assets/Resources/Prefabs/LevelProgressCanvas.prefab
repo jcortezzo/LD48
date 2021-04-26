@@ -522,6 +522,7 @@ GameObject:
   - component: {fileID: 4088980125036496292}
   - component: {fileID: 4088980125036496293}
   - component: {fileID: 4088980125036496297}
+  - component: {fileID: 542309518}
   m_Layer: 5
   m_Name: LevelProgressCanvas
   m_TagString: Untagged
@@ -623,6 +624,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBarInner: {fileID: 4088980124505954449}
   playerHead: {fileID: 4088980123980617974}
+  home: {fileID: 4088980123771319742}
+  store: {fileID: 4088980124306751337}
   progressEnd: {fileID: 5266045908966927860}
   player: {fileID: 0}
   maxDistance: 50
+--- !u!114 &542309518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088980125036496290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: e10cc0b415bae514aa099073e6c669b5, type: 2}
+    - {fileID: 11400000, guid: 1b9abdbe11e21774c8168188c25dab0f, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4088980125036496297}
+          m_MethodName: ProgressBegin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4088980125036496297}
+          m_MethodName: DisableProgress
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

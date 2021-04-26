@@ -17,6 +17,7 @@ public class Player : MovableEntity
     {
         base.Update();
         // Buffer for space presses
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             timeSinceJumpKeyPressed = 0f;
@@ -44,7 +45,7 @@ public class Player : MovableEntity
     {
         base.FixedUpdate();
 
-        if (stunTimer > 0)
+        if (isTalking)
         {
             return;
         }
@@ -103,12 +104,10 @@ public class Player : MovableEntity
             return;
         }
 
-        if (colliedEnemy && !DialogueManager.Instance.IsInDialogue)
-        {
-            DialogueManager.Instance.SetDialogueEntities(this, collision.gameObject.GetComponent<MovableEntity>());
-            this.isTalking = true;
-            collision.gameObject.GetComponent<MovableEntity>().isTalking = true;
-        }
+        //if (colliedEnemy && !DialogueManager.Instance.IsInDialogue)
+        //{
+        //    DialogueManager.Instance.SetDialogueEntities(this, collision.gameObject.GetComponent<MovableEntity>());      
+        //}
     }
 
     private void OnCollisionStay2D(Collision2D collision)

@@ -12,7 +12,7 @@ public class MovableEntity : MonoBehaviour
     [SerializeField] public float COUNTER_JUMP_FORCE;  // readonly
     public bool facingRight;
     private SpriteRenderer sr; 
-    [SerializeField] private Direction movingDirection = Direction.IDLE;
+    [SerializeField] public Direction movingDirection = Direction.IDLE;
 
     public const float CAN_JUMP_THRESHHOLD = 0.05f;
     public const float CAN_TALK_THRESHOLD = 0.05f;

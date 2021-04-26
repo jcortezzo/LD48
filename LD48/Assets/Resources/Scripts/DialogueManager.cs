@@ -51,7 +51,21 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayNextSentence()
     {
-        if (!ContainNextDialogue()) return;
+        if (!ContainNextDialogue())
+        {
+            if (player != null)
+            {
+                dialogueEntity2.gameObject.GetComponent<Collider2D>().enabled = false;
+                dialogueEntity2.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                dialogueEntity1.DisplaySentence("");
+                player.SetDirection(GlobalManager.Instance.gameDirection);
+                IsInDialogue = false;
+                player.isTalking = false;
+                enemy.isTalking = false;
+                ClearEntities();
+            } 
+            return;
+        }
         string sentence = sentences.Dequeue();
         dialogueEntity1.ClearText();
         dialogueEntity2.ClearText();
@@ -63,16 +77,7 @@ public class DialogueManager : MonoBehaviour
             dialogueEntity2.DisplaySentence(sentence);
         }
         firstPerson = !firstPerson;
-        if(!ContainNextDialogue())
-        {
-            dialogueEntity2.gameObject.GetComponent<Collider2D>().enabled = false;
-            dialogueEntity2.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-            dialogueEntity1.DisplaySentence("");
-            player.SetDirection(Direction.RIGHT);
-            IsInDialogue = false;
-            player.isTalking = false;
-            enemy.isTalking = false;
-        }
+
     }
 
     private bool ContainNextDialogue()
@@ -86,11 +91,20 @@ public class DialogueManager : MonoBehaviour
         enemy = d2;
         dialogueEntity1 = d1.gameObject.GetComponent<DialogueEntity>();
         dialogueEntity2 = d2.gameObject.GetComponent<DialogueEntity>();
+        d1.isTalking = true;
+        d2.isTalking = true;
         d1.SetDirection(Direction.IDLE);
         d2.SetDirection(Direction.IDLE);
         StartDialogue();
     }
 
+    private void ClearEntities()
+    {
+        dialogueEntity1 = null;
+        dialogueEntity2 = null;
+        player = null;
+        enemy = null;
+    }
 }
 
 [System.Serializable]

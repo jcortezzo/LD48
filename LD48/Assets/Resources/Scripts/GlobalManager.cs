@@ -9,6 +9,7 @@ public class GlobalManager : MonoBehaviour
     public Direction gameDirection;
 
     public float MAX_DISTANCE;
+    public bool levelBegin;
 
     public ProgressBar LevelProgress { get; set; }
     public PooProgress PooProgress { get; set; }
@@ -46,19 +47,34 @@ public class GlobalManager : MonoBehaviour
             if (PooProgress.PooPercentage() > 1.3f) LoadLosingScene();
         }
 
-        if(LevelProgress != null)
+        if(LevelProgress != null && gameDirection == Direction.RIGHT)
         {
             if (LevelProgress.ProgressPercentage() >= 1.0f) LoadStoreScene();
         }
+
+        if (LevelProgress != null && gameDirection == Direction.LEFT)
+        {
+            if (LevelProgress.ProgressPercentage() >= 1.0f) LoadWinScene();
+        }
     }
 
-    void LoadLosingScene()
+    public void LoadLosingScene()
     {
         SceneManager.LoadScene("LostScene");
     }
 
-    void LoadStoreScene()
+    public void LoadWinScene()
+    {
+        SceneManager.LoadScene("WinScene");
+    }
+
+    public void LoadStoreScene()
     {
         SceneManager.LoadScene("StoreScene");
+    }
+
+    public void LoadMovingBackHomeScene()
+    {
+        SceneManager.LoadScene("NguyenPrettyScene_Backward");
     }
 }
