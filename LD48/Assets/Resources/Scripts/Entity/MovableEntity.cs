@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MovableEntity : MonoBehaviour
@@ -9,7 +10,7 @@ public class MovableEntity : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] public float JUMP_FORCE;  // readonly
     [SerializeField] public float COUNTER_JUMP_FORCE;  // readonly
-    private bool facingRight;
+    public bool facingRight;
     private SpriteRenderer sr; 
     [SerializeField] private Direction movingDirection = Direction.IDLE;
 
@@ -31,6 +32,8 @@ public class MovableEntity : MonoBehaviour
     public Vector2 prevVelocity;
     public float prevGravity;
 
+    private RectTransform dialogueText;
+
     [SerializeField]
     private GameObject fadeDead;
     // Start is called before the first frame update
@@ -39,7 +42,8 @@ public class MovableEntity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        facingRight = true;
+        dialogueText = GetComponentInChildren<RectTransform>();
+
         spacebarHeld = false;
         timeSinceGrounded = float.PositiveInfinity;
         timeSinceJumpKeyPressed = float.PositiveInfinity;
@@ -51,25 +55,35 @@ public class MovableEntity : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (stunTimer > 0)
-        {
-            stunTimer -= Time.deltaTime;
-            if (stunTimer <= 0)
-            {
-                Debug.Log(prevGravity);
-                rb.velocity = prevVelocity;
-                rb.gravityScale = prevGravity;
-            }
-            else
-            {
-                return;
-            }
-        }
+        //if (stunTimer > 0)
+        //{
+        //    stunTimer -= Time.deltaTime;
+        //    if (stunTimer <= 0)
+        //    {
+        //        Debug.Log(prevGravity);
+        //        rb.velocity = prevVelocity;
+        //        rb.gravityScale = prevGravity;
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
 
+        if (transform.localScale.x < 0)
+        {
+            Debug.Log("scale fliped");
+            dialogueText.transform.localScale = new Vector3(-1, dialogueText.transform.localScale.y, dialogueText.transform.localScale.z);
+        }
+        else
+        {
+            dialogueText.transform.localScale.Set(1, 1, 1);
+        }
 
         timeSinceGrounded += Time.deltaTime; // janky :(
 
         anim.SetFloat("VerticalSpeed", rb.velocity.y);
+        anim.SetFloat("HorizontalSpeed", Mathf.Abs(rb.velocity.x));
         anim.SetBool("CanJump", (timeSinceJumpKeyPressed < JUMP_PRESS_BUFFER && timeSinceGrounded < COYOTE_BUFFER));
     }
 
@@ -112,14 +126,16 @@ public class MovableEntity : MonoBehaviour
 
     private Vector2 Walk(float horizontal)
     {
-        anim.SetFloat("HorizontalSpeed", Mathf.Abs(horizontal));
+        
         if (horizontal != 0)
         {
+            Debug.Log(horizontal);
             bool prev = facingRight;
             facingRight = horizontal > 0;
             int flip = prev == facingRight ? 1 : -1;
-            sr.flipX = horizontal < 0;
-            //transform.localScale = new Vector3(flip * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            //sr.flipX = horizontal < 0;
+
+            transform.localScale = new Vector3(flip * transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
         return new Vector2(horizontal * speed * Time.deltaTime, rb.velocity.y);
     }

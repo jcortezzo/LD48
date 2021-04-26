@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(s);
         }
         DisplayNextSentence();
+        
         IsInDialogue = true;
     }
 
@@ -57,10 +58,12 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueEntity1.DisplaySentence(sentence);
         }
+        firstPerson = !firstPerson;
         if(!ContainNextDialogue())
         {
             dialogueEntity2.gameObject.GetComponent<Collider2D>().enabled = false;
             dialogueEntity2.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+            dialogueEntity1.DisplaySentence("");
             player.SetDirection(Direction.RIGHT);
             IsInDialogue = false;
         }
@@ -79,6 +82,7 @@ public class DialogueManager : MonoBehaviour
         dialogueEntity2 = d2.gameObject.GetComponent<DialogueEntity>();
         d1.SetDirection(Direction.IDLE);
         d2.SetDirection(Direction.IDLE);
+        firstPerson = true;
         StartDialogue();
     }
 

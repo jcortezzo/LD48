@@ -9,6 +9,7 @@ public class Player : MovableEntity
     public override void Start()
     {
         base.Start();
+        facingRight = true;
     }
 
     // Update is called once per frame

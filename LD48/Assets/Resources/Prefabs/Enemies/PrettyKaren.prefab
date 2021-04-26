@@ -29,14 +29,14 @@ RectTransform:
   m_GameObject: {fileID: 492474655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.603744, y: 4.91066, z: 4.603744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 813346517259266627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.023019195, y: 3.133001}
+  m_AnchoredPosition: {x: 0.023019195, y: 0.88}
   m_SizeDelta: {x: 1.9051628, y: 0.6603352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &492474659
@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 136562809807839778}
   - component: {fileID: 2023318999430587350}
   - component: {fileID: 8693279490709939919}
+  - component: {fileID: 8772210972623122654}
   m_Layer: 0
   m_Name: PrettyKaren
   m_TagString: Enemy
@@ -284,7 +285,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -1659212786000395223, guid: adff6d52b0e301a4fb8473a07e0a3631,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.61, y: 3.75}
@@ -342,6 +343,7 @@ MonoBehaviour:
   speed: 100
   JUMP_FORCE: 10
   COUNTER_JUMP_FORCE: 30
+  facingRight: 0
   movingDirection: 0
   spacebarHeld: 0
   timeSinceGrounded: 0
@@ -352,6 +354,7 @@ MonoBehaviour:
   prevVelocity: {x: 0, y: 0}
   prevGravity: 0
   fadeDead: {fileID: 0}
+  distance: 10
   isGirl: 0
   randomGender: 1
 --- !u!61 &2023318999430587350
@@ -399,3 +402,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &8772210972623122654
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813346517259266653}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.47999144, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.31419694
