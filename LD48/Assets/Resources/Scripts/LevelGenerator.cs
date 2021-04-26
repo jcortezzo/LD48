@@ -34,12 +34,24 @@ public class LevelGenerator : MonoBehaviour
     {
         //if (!GlobalManager.instance.HasPlayer()) return;
 
-        if (player.transform.position.x >=
-            currentRoom.boundingBox.center.x - GEN_THRESHHOLD && !currentRoom.isInitialRoom)
+        if (GlobalManager.Instance.gameDirection == Direction.RIGHT && 
+            player.transform.position.x >= currentRoom.boundingBox.center.x - GEN_THRESHHOLD && !currentRoom.isInitialRoom)
         {
             Room nextRoom =
                     Instantiate(defaultRooms[Random.Range(0, defaultRooms.Length)],   // was prev from rooms arr
                                 new Vector2(currentRoom.boundingBox.max.x, currentRoom.transform.position.y),
+                                Quaternion.identity)
+                                .GetComponent<Room>();
+            prevRoom = currentRoom;
+            currentRoom = nextRoom;
+        }
+
+        if (GlobalManager.Instance.gameDirection == Direction.LEFT &&
+            player.transform.position.x <= currentRoom.boundingBox.center.x + GEN_THRESHHOLD && !currentRoom.isInitialRoom)
+        {
+            Room nextRoom =
+                    Instantiate(defaultRooms[Random.Range(0, defaultRooms.Length)],   // was prev from rooms arr
+                                new Vector2(currentRoom.boundingBox.min.x - currentRoom.boundingBox.size.x, currentRoom.transform.position.y),
                                 Quaternion.identity)
                                 .GetComponent<Room>();
             prevRoom = currentRoom;
@@ -55,9 +67,13 @@ public class LevelGenerator : MonoBehaviour
     {
         //if (!GlobalManager.instance.HasPlayer()) return;
         if (prevRoom == null) return;
+        
+        if ((GlobalManager.Instance.gameDirection == Direction.RIGHT && 
+            player.transform.position.x >= currentRoom.boundingBox.center.x + DELETE_THRESHHOLD) ||
 
-        if (player.transform.position.x >=
-            currentRoom.boundingBox.center.x + DELETE_THRESHHOLD)
+            (GlobalManager.Instance.gameDirection == Direction.LEFT &&
+            player.transform.position.x <= currentRoom.boundingBox.center.x - DELETE_THRESHHOLD)
+            )
         {
             // detatch enemy children before destroying
             // so they can move between screens

@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
             dialogueEntity2.gameObject.GetComponent<Collider2D>().enabled = false;
             dialogueEntity2.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             dialogueEntity1.DisplaySentence("");
-            player.SetDirection(Direction.RIGHT);
+            player.SetDirection(GlobalManager.Instance.gameDirection);
             IsInDialogue = false;
             player.isTalking = false;
             enemy.isTalking = false;

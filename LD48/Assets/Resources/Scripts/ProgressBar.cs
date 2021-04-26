@@ -23,7 +23,7 @@ public class ProgressBar : MonoBehaviour
         GlobalManager.Instance.LevelProgress = this;
 
         currentProgress = player.transform.position.x;
-        maxProgress = currentProgress + maxDistance;
+        maxProgress = GlobalManager.Instance.gameDirection == Direction.RIGHT ? currentProgress + maxDistance : currentProgress - maxDistance;
 
         playerHeadStart = playerHead.transform.position.x;
         playerHeadMaxRange = progressEnd.transform.position.x - playerHead.transform.position.x;
@@ -39,7 +39,10 @@ public class ProgressBar : MonoBehaviour
     void UpdateProgressBar()
     {
         progressBarInner.fillAmount = ProgressPercentage();
-        playerHead.transform.position = new Vector3(playerHeadStart + playerHeadMaxRange * ProgressPercentage(), 
+        float x = playerHeadStart + playerHeadMaxRange * ProgressPercentage();
+        //GlobalManager.Instance.gameDirection == Direction.RIGHT ? playerHeadStart + playerHeadMaxRange * ProgressPercentage() : 
+        //                                                                    playerHeadStart - playerHeadMaxRange * ProgressPercentage();
+        playerHead.transform.position = new Vector3(x, 
                                                     playerHead.transform.position.y, 
                                                     playerHead.transform.position.z);
     }

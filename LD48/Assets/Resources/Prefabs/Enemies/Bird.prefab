@@ -416,6 +416,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5283252, y: 0}
+  m_Offset: {x: 0.6689708, y: 0}
   serializedVersion: 2
-  m_Radius: 0.34072876
+  m_Radius: 0.26792037
