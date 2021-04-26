@@ -44,7 +44,11 @@ public class GlobalManager : MonoBehaviour
     {
         if(PooProgress != null)
         {
-            if (PooProgress.PooPercentage() > 1.3f) LoadLosingScene();
+            if (PooProgress.PooPercentage() > 1.3f)
+            {
+                player.ShitPants();
+                //LoadLosingScene();
+            }
         }
 
         if(LevelProgress != null && gameDirection == Direction.RIGHT)

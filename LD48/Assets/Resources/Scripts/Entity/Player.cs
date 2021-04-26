@@ -61,6 +61,17 @@ public class Player : MovableEntity
 
     }
 
+    public void ShitPants()
+    {
+        SetDirection(Direction.IDLE);
+        anim.Play("Player_Dying");
+    }
+
+    public void Lose()
+    {
+        GlobalManager.Instance.LoadLosingScene();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         bool colliedFloor = collision.gameObject.CompareTag("Floor");
