@@ -1322,13 +1322,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
+      propertyPath: defaultRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
+        type: 3}
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1366465418}
     - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
       propertyPath: DELETE_THRESHHOLD
-      value: -7
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
@@ -1341,6 +1346,24 @@ PrefabInstance:
       propertyPath: GEN_THRESHHOLD
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
+        type: 3}
+      propertyPath: defaultRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 3076541414224420690, guid: 6f58cedf9c5e92e48959d9fb4599532f,
+        type: 3}
+    - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
+        type: 3}
+      propertyPath: defaultRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 3076541414224420690, guid: 5aecc04feda71394c8d31fb16dc968d2,
+        type: 3}
+    - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
+        type: 3}
+      propertyPath: defaultRooms.Array.data[3]
+      value: 
+      objectReference: {fileID: 3076541414224420690, guid: 5aecc04feda71394c8d31fb16dc968d2,
+        type: 3}
     - target: {fileID: 6063401579046459238, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
       propertyPath: m_LocalPosition.x
