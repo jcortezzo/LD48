@@ -75,6 +75,22 @@ public class Enemy : MovableEntity
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        bool colliedPlayer = collision.CompareTag("Player");
+        bool colliedEnemy = collision.CompareTag("Enemy");
+        if (colliedPlayer || colliedEnemy)
+        {
+            isSomethingInFront = true;
+            if (colliedPlayer && !DialogueManager.Instance.IsInDialogue)
+            {
+                DialogueManager.Instance.SetDialogueEntities(collision.gameObject.GetComponent<MovableEntity>(), this);
+            }
+        }
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy"))

@@ -14,17 +14,22 @@ public class PooProgress : MonoBehaviour
     [Range(0.0f, 1f)]
     public float startingProgress;
 
-    private Image pooImage;
+    private Image pooImage, colonImage;
+
     private float max;
     private float maxRange;
 
+    private bool beginProgress;
 
     void Start()
     {
         Instance = this;
         GlobalManager.Instance.PooProgress = this;
-
+        beginProgress = true;
+        colonImage = this.GetComponent<Image>();
         pooImage = poo.gameObject.GetComponent<Image>();
+
+
         maxRange = poo.position.y - end.position.y;
         max = poo.position.y;
 
@@ -32,9 +37,24 @@ public class PooProgress : MonoBehaviour
         Debug.Log("maxx " + max);
     }
 
+    public void DisablePoo()
+    {
+        beginProgress = false;
+        pooImage.enabled = false;
+        colonImage.enabled = false;
+    }
+    public void BeginPoo()
+    {
+        beginProgress = true;
+        pooImage.enabled = true;
+        colonImage.enabled = true;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
+        if (!beginProgress) return;
         poo.transform.position -= (pooSpeed * Vector3.up);
         
         //Debug.Log(PooPercentage());

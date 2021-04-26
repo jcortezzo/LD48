@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b6b41ba8fba83f14fa26755b324ae420, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,6 +111,11 @@ PrefabInstance:
     - target: {fileID: 492474658, guid: aa9687d46b27eee42b832c5e8510da4c, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 813346517259266626, guid: aa9687d46b27eee42b832c5e8510da4c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
@@ -190,6 +195,11 @@ PrefabInstance:
     - target: {fileID: 492474658, guid: aa9687d46b27eee42b832c5e8510da4c, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 813346517259266626, guid: aa9687d46b27eee42b832c5e8510da4c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}

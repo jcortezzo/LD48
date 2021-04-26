@@ -14,10 +14,13 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject[] defaultRooms;
     private Player player;
 
+    private bool beginGenerate;
+
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
+        beginGenerate = true;
     }
 
     // Update is called once per frame
@@ -27,13 +30,22 @@ public class LevelGenerator : MonoBehaviour
         GenerateNextRoom();
     }
 
+    public void DisableGenerate()
+    {
+        beginGenerate = false;
+    }
+
+    public void BeginGenerate()
+    {
+        beginGenerate = true;
+    }
     /// <summary>
     /// Generates a new room if the player is close enough to the next room.
     /// </summary>
     private void GenerateNextRoom()
     {
         //if (!GlobalManager.instance.HasPlayer()) return;
-
+        if (!beginGenerate) return;
         if (GlobalManager.Instance.gameDirection == Direction.RIGHT && 
             player.transform.position.x >= currentRoom.boundingBox.center.x - GEN_THRESHHOLD && !currentRoom.isInitialRoom)
         {
