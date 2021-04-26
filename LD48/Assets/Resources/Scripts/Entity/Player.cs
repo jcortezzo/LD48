@@ -88,10 +88,21 @@ public class Player : MovableEntity
             }
         }
         float enemyHeight = collision.gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        // no collision if player is higher than enemy
         if (colliedEnemy && this.transform.position.y > collision.transform.position.y + enemyHeight / 2)
         {
             return;
         }
+
+        // no collision if player is ahead of enemy
+        // if game direction is moving to the right, then checking for p.x > e.x
+        // if game direction is moving to the left, then checking for p.x < e.x
+        if (colliedEnemy && ((GlobalManager.Instance.gameDirection == Direction.RIGHT && this.transform.position.x > collision.transform.position.x) ||
+                            (GlobalManager.Instance.gameDirection == Direction.LEFT && this.transform.position.x < collision.transform.position.x)))
+        {
+            return;
+        }
+
         if (colliedEnemy && !DialogueManager.Instance.IsInDialogue)
         {
             DialogueManager.Instance.SetDialogueEntities(this, collision.gameObject.GetComponent<MovableEntity>());

@@ -356,11 +356,13 @@ MonoBehaviour:
   speed: 200
   JUMP_FORCE: 11
   COUNTER_JUMP_FORCE: 30
+  facingRight: 0
   movingDirection: 2
   spacebarHeld: 0
   timeSinceGrounded: 0
   timeSinceJumpKeyPressed: 0
   isTalking: 0
+  entityType: 0
   stunTimer: 0
   anim: {fileID: 0}
   prevVelocity: {x: 0, y: 0}

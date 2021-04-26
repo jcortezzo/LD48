@@ -10,6 +10,10 @@ public class PooProgress : MonoBehaviour
     [SerializeField] private RectTransform poo;
     [SerializeField] private RectTransform end;
     [SerializeField] private float pooSpeed;
+
+    [Range(0.0f, 1f)]
+    public float startingProgress;
+
     private Image pooImage;
     private float max;
     private float maxRange;
@@ -18,9 +22,13 @@ public class PooProgress : MonoBehaviour
     void Start()
     {
         Instance = this;
+        GlobalManager.Instance.PooProgress = this;
+
         pooImage = poo.gameObject.GetComponent<Image>();
         maxRange = poo.position.y - end.position.y;
         max = poo.position.y;
+
+        PushPooDeeper(-maxRange * startingProgress);
         Debug.Log("maxx " + max);
     }
 
@@ -28,7 +36,7 @@ public class PooProgress : MonoBehaviour
     void Update()
     {
         poo.transform.position -= (pooSpeed * Vector3.up);
-        if (PooPercentage() > 1.3f) SceneManager.LoadScene("LostScene");
+        
         //Debug.Log(PooPercentage());
     }
 
@@ -40,6 +48,10 @@ public class PooProgress : MonoBehaviour
     
     public void PushPooDeeper(float value = 10)
     {
-        poo.transform.position += Vector3.up * value;
+        if(PooPercentage() >= 0)
+        {
+            poo.transform.position += Vector3.up * value;
+        }
+        
     }
 }
