@@ -9,6 +9,7 @@ public class Player : MovableEntity
     public override void Start()
     {
         base.Start();
+        facingRight = true;
     }
 
     // Update is called once per frame
@@ -76,12 +77,37 @@ public class Player : MovableEntity
                     }
                 }
                 
+                
+                //if(point.normal.x >= CAN_TALK_THRESHOLD)
+                //{
+                //    if (colliedEnemy)
+                //    {
+                //        return;
+                //    }
+                //}
             }
+        }
+        float enemyHeight = collision.gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        // no collision if player is higher than enemy
+        if (colliedEnemy && this.transform.position.y > collision.transform.position.y + enemyHeight / 2)
+        {
+            return;
+        }
+
+        // no collision if player is ahead of enemy
+        // if game direction is moving to the right, then checking for p.x > e.x
+        // if game direction is moving to the left, then checking for p.x < e.x
+        if (colliedEnemy && ((GlobalManager.Instance.gameDirection == Direction.RIGHT && this.transform.position.x > collision.transform.position.x) ||
+                            (GlobalManager.Instance.gameDirection == Direction.LEFT && this.transform.position.x < collision.transform.position.x)))
+        {
+            return;
         }
 
         if (colliedEnemy && !DialogueManager.Instance.IsInDialogue)
         {
             DialogueManager.Instance.SetDialogueEntities(this, collision.gameObject.GetComponent<MovableEntity>());
+            this.isTalking = true;
+            collision.gameObject.GetComponent<MovableEntity>().isTalking = true;
         }
     }
 
@@ -100,6 +126,7 @@ public class Player : MovableEntity
                     if (colliedEnemy)
                     {
                         Jump();
+                        PooProgress.Instance.PushPooDeeper();
                         collision.gameObject.GetComponent<DialogueEntity>().DisplaySentence("Oucchh");
                         //return;
                     }
@@ -107,13 +134,5 @@ public class Player : MovableEntity
 
             }
         }
-    }
-
-    public void Stun(float n)
-    {
-        stunTimer = n;
-        prevVelocity = rb.velocity;
-        rb.velocity = Vector2.zero;
-        rb.gravityScale = 0;
     }
 }

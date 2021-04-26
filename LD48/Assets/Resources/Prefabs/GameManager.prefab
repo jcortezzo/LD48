@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5046920ee7267ec4caf70e821989c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  gameDirection: 1
+  MAX_DISTANCE: 0

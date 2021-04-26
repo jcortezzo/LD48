@@ -12,11 +12,12 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject[] rooms;
 
     [SerializeField] private GameObject[] defaultRooms;
+    private Player player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class LevelGenerator : MonoBehaviour
     {
         //if (!GlobalManager.instance.HasPlayer()) return;
 
-        if (GlobalManager.Instance.player.transform.position.x >=
+        if (player.transform.position.x >=
             currentRoom.boundingBox.center.x - GEN_THRESHHOLD && !currentRoom.isInitialRoom)
         {
             Room nextRoom =
@@ -55,7 +56,7 @@ public class LevelGenerator : MonoBehaviour
         //if (!GlobalManager.instance.HasPlayer()) return;
         if (prevRoom == null || prevRoom.dontDelete) return;
 
-        if (GlobalManager.Instance.player.transform.position.x >=
+        if (player.transform.position.x >=
             currentRoom.boundingBox.center.x + DELETE_THRESHHOLD)
         {
             // detatch enemy children before destroying

@@ -52,3 +52,8 @@ MonoBehaviour:
     - Hi!! How is your day?
     - GETTTT OUTTTT
     - oh, i'm sorry :(
+    p1First: 0
+  birdDialogues:
+  - text:
+    - QUACK
+    p1First: 0
