@@ -43,5 +43,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbadc460588f3024798469629cf63580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musics: []
-  sfxs: []
+  musics:
+  - clip: {fileID: 8300000, guid: 1a03236b28fee3d43a5ca9d92f71ab13, type: 3}
+    name: poop
+    volume: 0.2
+    pitch: 1
+    loop: 1
+  sfxs:
+  - clip: {fileID: 8300000, guid: 0a85c5b5319116349bd7bde724d8fd3a, type: 3}
+    name: jump1
+    volume: 0.75
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 934778ac99e4902418bde19dfeb97fb9, type: 3}
+    name: crunch
+    volume: 0.75
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 9e9c5a214a0cbfe45857935363d2a589, type: 3}
+    name: diaria
+    volume: 0.75
+    pitch: 1
+    loop: 0

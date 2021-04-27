@@ -70,7 +70,7 @@ public class GlobalManager : MonoBehaviour
 
     public void LoadWinScene()
     {
-        SceneManager.LoadScene("WinScene");
+        SceneManager.LoadScene("Nguyen_WinningScene");
     }
 
     public void LoadStoreScene()

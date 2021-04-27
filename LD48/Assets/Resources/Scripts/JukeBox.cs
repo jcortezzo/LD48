@@ -30,6 +30,11 @@ public class JukeBox : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    public void StopAllMusic()
+    {
+        musicSource.Stop();
+    }
+
     public void PlayMusic(string name)
     {
         foreach (Sound s in musics)
