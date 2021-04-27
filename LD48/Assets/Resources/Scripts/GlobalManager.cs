@@ -36,6 +36,7 @@ public class GlobalManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         player.SetDirection(gameDirection);
+        JukeBox.Instance.PlayMusic("poop");
 
     }
 
