@@ -86,6 +86,7 @@ public class GlobalManager : MonoBehaviour
     public void LoadBegining()
     {
         gameDirection = Direction.RIGHT;
+        JukeBox.Instance.PlayMusic("poop");
         SceneManager.LoadScene("Nguyen_StartingScene");
     }
 }

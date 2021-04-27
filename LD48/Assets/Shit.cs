@@ -23,6 +23,6 @@ public class Shit : MonoBehaviour
 
     public void RestartGame()
     {
-        // TODO: restart code here
+        GlobalManager.Instance.LoadBegining();
     }
 }
