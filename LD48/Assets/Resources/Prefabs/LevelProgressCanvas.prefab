@@ -628,7 +628,7 @@ MonoBehaviour:
   store: {fileID: 4088980124306751337}
   progressEnd: {fileID: 5266045908966927860}
   player: {fileID: 0}
-  maxDistance: 50
+  maxDistance: 100
 --- !u!114 &542309518
 MonoBehaviour:
   m_ObjectHideFlags: 0

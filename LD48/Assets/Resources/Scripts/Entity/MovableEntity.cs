@@ -35,6 +35,9 @@ public class MovableEntity : MonoBehaviour
 
     private RectTransform dialogueText;
 
+    [SerializeField] private ParticleSystem jumpDustParticle;
+
+
     [SerializeField]
     private GameObject fadeDead;
     // Start is called before the first frame update
@@ -155,6 +158,8 @@ public class MovableEntity : MonoBehaviour
         timeSinceGrounded = float.PositiveInfinity;  // Prevents us from double-jumping
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(JUMP_FORCE * Vector2.up * rb.mass, ForceMode2D.Impulse);
+        if(jumpDustParticle != null) jumpDustParticle.Play();
+        JukeBox.Instance.PlaySFX("jump1", pitch: Random.Range(1f, 2f));
     }
 
     public bool CanJump()
