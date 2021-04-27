@@ -11,6 +11,7 @@ public class Player : MovableEntity
         base.Start();
         facingRight = true;
         GlobalManager.Instance.player = this;
+        movingDirection = GlobalManager.Instance.gameDirection;
     }
 
     // Update is called once per frame

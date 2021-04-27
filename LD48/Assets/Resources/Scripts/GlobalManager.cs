@@ -82,4 +82,10 @@ public class GlobalManager : MonoBehaviour
     {
         SceneManager.LoadScene("NguyenPrettyScene_Backward");
     }
+
+    public void LoadBegining()
+    {
+        gameDirection = Direction.RIGHT;
+        SceneManager.LoadScene("Nguyen_StartingScene");
+    }
 }
