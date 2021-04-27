@@ -66,7 +66,7 @@ public class PooProgress : MonoBehaviour
         return (max - poo.position.y) / maxRange; 
     }
     
-    public void PushPooDeeper(float value = 10)
+    public void PushPooDeeper(float value = 30)
     {
         if(PooPercentage() >= 0)
         {

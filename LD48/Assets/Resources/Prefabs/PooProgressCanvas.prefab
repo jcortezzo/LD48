@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poo: {fileID: 1417310951147903782}
   end: {fileID: 1417310951350509791}
-  pooSpeed: 20
+  pooSpeed: 30
   startingProgress: 0.5
 --- !u!114 &1808000058
 MonoBehaviour:

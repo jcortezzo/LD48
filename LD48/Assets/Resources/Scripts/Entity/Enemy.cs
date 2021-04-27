@@ -9,6 +9,9 @@ public class Enemy : MovableEntity
     [HeaderAttribute("Gender")]
     [SerializeField] private bool isGirl;
     [SerializeField] private bool randomGender;
+
+    private bool talked = false;
+
     RaycastHit2D hit;
     private bool isSomethingInFront;
     // Start is called before the first frame update
@@ -83,9 +86,10 @@ public class Enemy : MovableEntity
         if (colliedPlayer || colliedEnemy)
         {
             isSomethingInFront = true;
-            if (colliedPlayer && !DialogueManager.Instance.IsInDialogue)
+            if (colliedPlayer && !DialogueManager.Instance.IsInDialogue && !talked)
             {
                 DialogueManager.Instance.SetDialogueEntities(collision.gameObject.GetComponent<MovableEntity>(), this);
+                talked = true;
             }
         }
     }
