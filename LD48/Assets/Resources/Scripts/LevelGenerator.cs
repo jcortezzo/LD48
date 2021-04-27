@@ -53,7 +53,7 @@ public class LevelGenerator : MonoBehaviour
         {
             Room nextRoom =
                     Instantiate(defaultRooms[Random.Range(0, defaultRooms.Length)],   // was prev from rooms arr
-                                new Vector2(currentRoom.boundingBox.max.x, currentRoom.transform.position.y),
+                                new Vector2(currentRoom.boundingBox.max.x + currentRoom.boundingBox.size.x / 2, currentRoom.transform.position.y),
                                 Quaternion.identity)
                                 .GetComponent<Room>();
             Debug.Log("There are " + prevRooms.Count + " rooms to destroy");
@@ -72,7 +72,7 @@ public class LevelGenerator : MonoBehaviour
         {
             Room nextRoom =
                     Instantiate(defaultRooms[Random.Range(0, defaultRooms.Length)],   // was prev from rooms arr
-                                new Vector2(currentRoom.boundingBox.min.x - currentRoom.boundingBox.size.x, currentRoom.transform.position.y),
+                                new Vector2(currentRoom.boundingBox.min.x - currentRoom.boundingBox.size.x / 2, currentRoom.transform.position.y),
                                 Quaternion.identity)
                                 .GetComponent<Room>();
             Debug.Log("There are " + prevRooms.Count + " rooms to destroy");

@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poo: {fileID: 1417310951147903782}
   end: {fileID: 1417310951350509791}
-  pooSpeed: 0.2
+  pooSpeed: 20
   startingProgress: 0.5
 --- !u!114 &1808000058
 MonoBehaviour:
@@ -239,11 +239,25 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: e10cc0b415bae514aa099073e6c669b5, type: 2}
+    - {fileID: 11400000, guid: 1b9abdbe11e21774c8168188c25dab0f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1417310951870313543}
           m_MethodName: BeginPoo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1417310951870313543}
+          m_MethodName: DisablePoo
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
