@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: c8820f29ee46cfd4896b0de65b55ddc2
+  - enabled: 1
+    path: Assets/Scenes/Nguyen_WinningScene.unity
+    guid: 0140cebc80359784ebb24a5e0a9e044d
   m_configObjects: {}
