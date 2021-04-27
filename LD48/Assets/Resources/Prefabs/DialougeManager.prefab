@@ -49,11 +49,13 @@ MonoBehaviour:
   dialogueEntity2: {fileID: 0}
   dialogues:
   - text:
-    - Hi!! How is your day?
-    - GETTTT OUTTTT
+    - Hi!! How is your day??
+    - I GOTTA SHIT, MOVEEE
     - oh, i'm sorry :(
     p1First: 0
   birdDialogues:
   - text:
     - QUACK
+    - MOVEEEEE
+    - QUACK :(
     p1First: 0
