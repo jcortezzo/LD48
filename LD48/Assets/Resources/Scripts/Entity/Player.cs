@@ -131,25 +131,25 @@ public class Player : MovableEntity
     {
         bool colliedFloor = collision.gameObject.CompareTag("Floor");
         bool colliedEnemy = collision.gameObject.CompareTag("Enemy");
-        //if (colliedFloor || colliedEnemy)
-        //{
+        if (colliedFloor || colliedEnemy)
+        {
             //if (colliedEnemy) bounce = false;
-        //    foreach (ContactPoint2D point in collision.contacts)
-        //    {
-        //        if (point.normal.y >= CAN_JUMP_THRESHHOLD)
-        //        {
-        //            timeSinceGrounded = 0f;
-        //            if (colliedEnemy)
-        //            {
-        //                Jump();
-        //                JukeBox.Instance.PlaySFX("crunch");
-        //                PooProgress.Instance.PushPooDeeper();
-        //                collision.gameObject.GetComponent<DialogueEntity>().DisplaySentence("Oucchh");
-        //                //return;
-        //            }
-        //        }
+            foreach (ContactPoint2D point in collision.contacts)
+            {
+                if (point.normal.y >= CAN_JUMP_THRESHHOLD)
+                {
+                    timeSinceGrounded = 0f;
+                    //if (colliedEnemy)
+                    //{
+                    //    Jump();
+                    //    JukeBox.Instance.PlaySFX("crunch");
+                    //    PooProgress.Instance.PushPooDeeper();
+                    //    collision.gameObject.GetComponent<DialogueEntity>().DisplaySentence("Oucchh");
+                    //    //return;
+                    //}
+                }
 
-        //    }
-        //}
+            }
+        }
     }
 }
