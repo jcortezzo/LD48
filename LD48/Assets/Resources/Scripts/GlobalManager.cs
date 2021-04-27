@@ -37,7 +37,7 @@ public class GlobalManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         player.SetDirection(gameDirection);
         JukeBox.Instance.PlayMusic("poop");
-
+        LoadBegining();
     }
 
     // Update is called once per frame
