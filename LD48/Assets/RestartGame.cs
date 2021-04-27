@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shit : MonoBehaviour
+public class RestartGame : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        JukeBox.Instance.StopAllMusic();
+        
     }
 
     // Update is called once per frame
@@ -16,12 +16,7 @@ public class Shit : MonoBehaviour
         
     }
 
-    public void MakeShitSound()
-    {
-        JukeBox.Instance.PlaySFX("diaria");
-    }
-
-    public void RestartGame()
+    public void LoadBegining()
     {
         GlobalManager.Instance.LoadBegining();
     }

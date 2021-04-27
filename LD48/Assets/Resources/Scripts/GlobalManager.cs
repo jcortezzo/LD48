@@ -82,4 +82,11 @@ public class GlobalManager : MonoBehaviour
     {
         SceneManager.LoadScene("NguyenPrettyScene_Backward");
     }
+
+    public void LoadBegining()
+    {
+        gameDirection = Direction.RIGHT;
+        JukeBox.Instance.PlayMusic("poop");
+        SceneManager.LoadScene("Nguyen_StartingScene");
+    }
 }
