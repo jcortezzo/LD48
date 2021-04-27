@@ -218,6 +218,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1417310951870313543, guid: 3c57598e892e2e74cafcadaf41310ace,
+        type: 3}
+      propertyPath: pooSpeed
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 1417310952421615376, guid: 3c57598e892e2e74cafcadaf41310ace,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -969,7 +974,7 @@ PrefabInstance:
     - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
       propertyPath: DELETE_THRESHHOLD
-      value: -7
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
@@ -980,7 +985,7 @@ PrefabInstance:
     - target: {fileID: 6063401579046459237, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}
       propertyPath: GEN_THRESHHOLD
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6063401579046459238, guid: d44fb804bbf32c54f9662633d2a59f75,
         type: 3}

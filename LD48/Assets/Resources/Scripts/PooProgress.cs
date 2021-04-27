@@ -55,7 +55,7 @@ public class PooProgress : MonoBehaviour
     void Update()
     {
         if (!beginProgress) return;
-        poo.transform.position -= (pooSpeed * Vector3.up);
+        poo.transform.position -= (pooSpeed * Vector3.up * Time.deltaTime);
         
         //Debug.Log(PooPercentage());
     }
