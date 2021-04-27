@@ -122,12 +122,12 @@ PrefabInstance:
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.01
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.45
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
@@ -290,12 +290,12 @@ PrefabInstance:
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.14
+      value: 2.23
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.11
+      value: -2.05
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: aa9687d46b27eee42b832c5e8510da4c,
         type: 3}
@@ -374,12 +374,12 @@ PrefabInstance:
     - target: {fileID: 813346517259266627, guid: de7918bb08aeb50498ac926e0221a7eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.52
+      value: 4.33
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: de7918bb08aeb50498ac926e0221a7eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3559129
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: 813346517259266627, guid: de7918bb08aeb50498ac926e0221a7eb,
         type: 3}
