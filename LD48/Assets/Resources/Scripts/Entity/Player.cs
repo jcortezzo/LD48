@@ -25,20 +25,37 @@ public class Player : MovableEntity
             timeSinceJumpKeyPressed = 0f;
         }
         else
+        {
             timeSinceJumpKeyPressed += Time.deltaTime;
+        }
 
         // Checking if spacebar held (no buffer)
-        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             spacebarHeld = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space) || Input.touchCount <= 0)
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             spacebarHeld = false;
             // Switches from red spacebar to white spacebar
         }
 
-        timeSinceGrounded += Time.deltaTime; // janky :(
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            switch (touch.phase)
+            {
+                case TouchPhase.Ended:
+                    spacebarHeld = false;
+                    break;
+                default:
+                    timeSinceJumpKeyPressed = 0f;
+                    spacebarHeld = true;
+                    break;
+            }
+        }
+
+        timeSinceGrounded += Time.deltaTime;  // janky :(
 
         anim.SetFloat("VerticalSpeed", rb.velocity.y);
         anim.SetBool("CanJump", (timeSinceJumpKeyPressed < JUMP_PRESS_BUFFER && timeSinceGrounded < COYOTE_BUFFER));
