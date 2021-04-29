@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MovableEntity
 {
-
+    private bool isShitting;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -63,8 +63,14 @@ public class Player : MovableEntity
 
     }
 
+    public override void Jump()
+    {
+        if(!isShitting) base.Jump();
+    }
+
     public void ShitPants()
     {
+        isShitting = true;
         SetDirection(Direction.IDLE);
         anim.Play("Player_Dying");
     }

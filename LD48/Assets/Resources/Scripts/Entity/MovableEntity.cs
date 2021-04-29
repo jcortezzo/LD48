@@ -151,7 +151,7 @@ public class MovableEntity : MonoBehaviour
     }
 
 
-    public void Jump()
+    public virtual void Jump()
     {
         if (DialogueManager.Instance.IsInDialogue) return;  // isTalking previously
         anim.SetTrigger("Jump");
