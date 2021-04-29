@@ -28,9 +28,11 @@ public class Player : MovableEntity
             timeSinceJumpKeyPressed += Time.deltaTime;
 
         // Checking if spacebar held (no buffer)
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
+        {
             spacebarHeld = true;
-        else if (Input.GetKeyUp(KeyCode.Space))
+        }
+        else if (Input.GetKeyUp(KeyCode.Space) || Input.touchCount <= 0)
         {
             spacebarHeld = false;
             // Switches from red spacebar to white spacebar
